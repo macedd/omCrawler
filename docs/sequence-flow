@@ -1,0 +1,49 @@
+php om-crawler
+  crawler.php
+    $crawler = new Crawler()
+        $this->loadConfig( $usrconfig )
+            $this->config = $usrconfig
+            $this->settings &= $this->config['crawler'];
+
+        $this->startDatabases()
+        $this->saveDbObj( 'init' )
+
+    $crawler->start()
+        $this->scrape( $scrps )
+            foreach ( $scrps as $scrp )
+                $scraper = $this->prepareScraper( $scrp )
+                    $scraper = new Scraper( $scrp )
+                        $scraper->settings = $scrp
+                    if ( $this->settings['proxy']  === true )
+                      $scraper->proxy = Proxy::getProxy()
+                    else
+                      $scraper->proxy = $this->settings['proxy']
+                    $this->prepareQuery()
+                    $this->prepareSuite()
+                    $this->saveDbObj('scraperStart')
+
+                if ( $scrp['data'] )
+                  $scraper->store( $data )
+                      $scraper->data = $data
+                      [...]
+
+                else
+                  $output = $this->runPhantom( $scraper )
+                  $scraper->load( $output )
+                      $output = $scraper->loadPjscrape ( $output )
+                          $scraper->pages = array( 'error', 'success' )
+
+                      $json = json_clean( $output )
+                      $scraper->data = json_decode( $json )
+
+                  $scraper->store()
+                  $this->scrapeErrors( $scraper )
+                      if ( count($scraper->pages['error']) > 0 )
+                        $rescrp = $scraper->settings['suite']
+                        $rescrp['suite']['urls'] = $this->pages['error']
+                        $rescrp['suite']['config']['ignoreUrls'] = $this->pages['success']
+                        $this->scrape( array( $rescrp ) )
+
+                $this->saveDbObj('scraperEnd')
+
+        $this->saveDbObj( 'finish' )

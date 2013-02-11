@@ -1,0 +1,14 @@
+#phantomjs
+cd /opt
+mkdir scripts/lib -p
+cd scripts/lib
+
+wget http://phantomjs.googlecode.com/files/phantomjs-1.6.0-linux-i686-dynamic.tar.bz2
+tar jxf phantomjs-1.6.0-linux-i686-dynamic.tar.bz2 phantomjs-1.6.0-linux-i686-dynamic/
+mv phantomjs-1.6.0-linux-i686-dynamic phantomjs
+
+cd /usr/local/bin/
+ln -s ../../../opt/scripts/lib/phantomjs/bin/phantomjs
+
+#php5-cli
+sudo apt-get install php5-cli php5-sqlite php5-pgsql
