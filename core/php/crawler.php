@@ -27,7 +27,7 @@ Class Crawler {
     //todo: criar todos os campos possíveis aqui, como exemplo, se possível com comentários
     private $config = array(
                 'databases' => array(
-                    array('config', 'sqlite:./data/config','crawler','omsh4nt1',false)
+                    array('config', 'sqlite:./data/config','crawler','yeswecan',false)
                     ),
                 'crawler' => array(
                     'proxy' => false,
