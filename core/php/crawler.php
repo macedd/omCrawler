@@ -368,8 +368,12 @@ Class Crawler {
             foreach ( $scraper->query['error'] as $qry ) {
                 $qry = json_decode($qry, true);
                 $qryrow = array_msearch( $scraper->dbobj->ownOmQuery, 'id', $qryrow['id'] );
+                
+                /*
+                todo: come back here
                 print_r($qryrow);
-                exit();
+                exit();*/
+                
                 $qryrow->status = 'e';
                 R::store($qryrow);
                 $qryrow[''];
