@@ -1,24 +1,27 @@
 omCrawler
 =========
 
-Headless webkit data scraper based on phantomjs
+Headless webkit data scraper based on phantomjs and jQuery
 
 Current status
 -----
 
 **Beta/Development**
+
 I have used it several times but havent had the time to fully complete my design goal.
 
 Goals
 -----
 
 Collect, format and store data from any possible source.
+
 Initial requirement was to collect data from websites within the browser perspective (ajax based), but the goal is to be a definitive crawler application for the most usual scenarios and to offer tools for making the job more concise/easier.
 
 Usage
 -----
 
 Define a crawler instance in the suites path like the example bellow (suites/proxy.json)
+
 	{
 	    name: 'Proxy Scrapper',
 	    databases: [
@@ -72,8 +75,11 @@ Define a crawler instance in the suites path like the example bellow (suites/pro
 	}
 
 Then run from the command line
-	php ./om-crawler.php proxy
+
+	./om-crawler.php proxy
+
 The php core will look at the suites folder and run you configuration till end (moreUrls?)
+
 Be carefull with the json as it still bugs sometimes.
 
 That's it. You can check how to install in the docs folder.
@@ -83,5 +89,6 @@ TODO
 
 * Finish todo comments
 * Make the docs
-* Translate comments
-* Later refactor
+* Translate all comments
+* Refactor
+* Implement cUrl based craw
