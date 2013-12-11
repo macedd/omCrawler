@@ -92,3 +92,7 @@ TODO
 * Translate all comments
 * Refactor
 * Implement cUrl based craw
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/thiagof/omcrawler/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
